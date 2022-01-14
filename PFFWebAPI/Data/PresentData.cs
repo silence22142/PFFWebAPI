@@ -11,16 +11,6 @@ namespace PFFWebAPI.Data
         {
             _context = context;
         }
-        public List<Present> GetPresents()
-        {
-            return _context.Presents.ToList();
-        }
-
-        public Present GetPresent(int id)
-        {
-            var present = _context.Presents.Find(id);
-            return present;
-        }
 
         public Present AddPresent(Present present)
         {
@@ -43,6 +33,17 @@ namespace PFFWebAPI.Data
                 _context.Presents.Update(existingPresent);
                 _context.SaveChanges();
             }
+            return present;
+        }
+
+        public List<Present> GetPresents()
+        {
+            return _context.Presents.ToList();
+        }
+
+        public Present GetPresent(int id)
+        {
+            var present = _context.Presents.Find(id);
             return present;
         }
     }

@@ -16,14 +16,14 @@ namespace PFFWebAPI.Models
 
         [Required(ErrorMessage = "Name is required")]
         [MaxLength(30, ErrorMessage = "Name should contains max 50 characters")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [Required(ErrorMessage = "Description is required")]
         [MaxLength(200, ErrorMessage = "Description should contains max 200 characters")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         [Required(ErrorMessage = "Link is required")]
-        public string Link { get; set; }
+        public string? Link { get; set; }
 
         [MaxLength]
         public byte[] DataFiles { get; set; }
@@ -33,7 +33,7 @@ namespace PFFWebAPI.Models
         public IFormFile ImageFile { get; set; }
 
         [Required(ErrorMessage = "Price is required")]
-        public float Price { get; set; }
-        public string UserID { get; set; }
+        public float? Price { get; set; }
+        public string? UserID { get; set; }
     }
 }
